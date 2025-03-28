@@ -54,7 +54,7 @@ constraint-dependencies = ["hyperspy>=1.7.6"]
 prerelease = "disallow"
 
 [tool.uv.sources]
-nomad-uibk-plugin = { git = "https://github.com/fabianschoeppach/nomad-UIBK-plugin", rev = "v0.1.0" }
+nomad-uibk-plugin = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin", rev = "v0.1.0" }
 
 [tool.setuptools.packages.find]
 exclude = ["gui*", "docs*", "config*"]

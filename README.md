@@ -2,7 +2,7 @@
 
 # NOMAD Oasis Distribution
 
-![docker image](https://github.com/fabianschoeppach/nomad-UIBK-image/actions/workflows/docker-publish.yml/badge.svg)
+![docker image](https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/actions/workflows/docker-publish.yml/badge.svg)
 
 This is an distribution image of a [NOMAD Oasis](https://nomad-lab.eu/nomad-lab/nomad-oasis.html) provided by [FAIRmat](https://github.com/FAIRmat-NFDI).
 Below are instructions on how to [deploy this distribution](#deploying-the-distribution)
@@ -23,14 +23,14 @@ install the stand-alone [docker-compose](https://docs.docker.com/compose/install
 2. Clone the repository or download the repository as a zip file.
 
 ```sh
-git clone https://github.com/fabianschoeppach/nomad-UNITOV-image.git
+git clone https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UNITOV-image.git
 cd nomad-UNITOV-image
 ```
 
 or
 
 ```sh
-curl-L -o nomad-UNITOV-image.zip "https://github.com/fabianschoeppach/nomad-UNITOV-image/archive/main.zip"
+curl-L -o nomad-UNITOV-image.zip "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UNITOV-image/archive/main.zip"
 unzip nomad-UNITOV-image.zip
 cd nomad-UNITOV-image
 ```
@@ -84,7 +84,7 @@ You can find more details on setting up and maintaining an Oasis in the NOMAD do
 ### For an existing Oasis
 
 If you already have an Oasis running you only need to change the image being pulled in
-your `docker-compose.yaml` with `ghcr.io/fabianschoeppach/nomad-UIBK-image:main` for the services
+your `docker-compose.yaml` with `ghcr.io/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image:main` for the services
 `worker`, `app`, `north`, and `logtransfer`.
 
 If you want to use the `nomad.yaml` from this repository you also need to comment out
@@ -197,7 +197,7 @@ Ideally all workflows should be triggered automatically but you might need to ru
 
 ## FAQ/Trouble shooting
 
- *I get an* `Error response from daemon: Head "https://ghcr.io/v2/fabianschoeppach/nomad-UIBK-image/manifests/main": unauthorized`
+ *I get an* `Error response from daemon: Head "https://ghcr.io/v2/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/manifests/main": unauthorized`
  *when trying to pull my docker image.*
  
  Most likely you have not made the package public or provided a personal access token (PAT).

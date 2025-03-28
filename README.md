@@ -1,6 +1,8 @@
-![docker image](https://github.com/fabianschoeppach/nomad-UIBK-image/actions/workflows/docker-publish.yml/badge.svg)
+<img src="assets/nomad_oasis_logo.png" alt="NOMAD Oasis Logo" width="200">
 
 # NOMAD Oasis Distribution
+
+![docker image](https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/actions/workflows/docker-publish.yml/badge.svg)
 
 This is an distribution image of a [NOMAD Oasis](https://nomad-lab.eu/nomad-lab/nomad-oasis.html) provided by [FAIRmat](https://github.com/FAIRmat-NFDI).
 Below are instructions on how to [deploy this distribution](#deploying-the-distribution)
@@ -17,31 +19,46 @@ For further questions, consult the [documentation](https://nomad-lab.eu/prod/v1/
 1. Make sure you have [docker](https://docs.docker.com/engine/install/) installed.
 Docker nowadays comes with `docker compose` built in. Prior, you needed to
 install the stand-alone [docker-compose](https://docs.docker.com/compose/install/).
-2. Get the `nomad-oasis.zip` archive from this distribution repository. An easy option is using for example curl
+
+2. Clone the repository or download the repository as a zip file.
+
 ```sh
-curl -L -o nomad-oasis.zip "https://github.com/fabianschoeppach/nomad-UIBK-image/raw/main/nomad-oasis.zip"
+git clone https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UNITOV-image.git
+cd nomad-UNITOV-image
 ```
-3. Unzip the `nomad-oasis.zip` file and enter the extracted directory
+
+or
+
 ```sh
-unzip nomad-oasis.zip
-cd nomad-oasis
+curl-L -o nomad-UNITOV-image.zip "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UNITOV-image/archive/main.zip"
+unzip nomad-UNITOV-image.zip
+cd nomad-UNITOV-image
 ```
-4. _On Linux only,_ recursively change the owner of the `.volumes` directory to the nomad user (1000) 
+
+3. _On Linux only,_ recursively change the owner of the `.volumes` directory to the nomad user (1000) 
+
 ```sh
 sudo chown -R 1000 .volumes
 ```
-5. Pull the images specified in the `docker-compose.yaml`.
+
+4. Pull the images specified in the `docker-compose.yaml`.
+
 ```sh
 docker compose pull
 ```
-6. And run it with docker compose in detached (--detach or -d) mode 
+
+5. And run it with docker compose in detached (--detach or -d) mode 
+
 ```sh
 docker compose up -d
 ```
-7. Optionally you can now test that NOMAD is running with
+
+6. Optionally you can now test that NOMAD is running with
+
 ```
 curl localhost/nomad-oasis/alive
 ```
+
 8. Finally, open [http://localhost/nomad-oasis](http://localhost/nomad-oasis) in your browser to start using your new NOMAD Oasis.
 
 #### Updating the Oasis
@@ -54,6 +71,7 @@ docker compose up -d
 ```
 
 #### NOMAD Remote Tools Hub (NORTH)
+
 To run NORTH (the NOMAD Remote Tools Hub), the `hub` container needs to run docker and
 the container has to be run under the docker group. You need to replace the default group
 id `991` in the `docker-compose.yaml`'s `hub` section with your systems docker group id.
@@ -66,7 +84,7 @@ You can find more details on setting up and maintaining an Oasis in the NOMAD do
 ### For an existing Oasis
 
 If you already have an Oasis running you only need to change the image being pulled in
-your `docker-compose.yaml` with `ghcr.io/fabianschoeppach/nomad-UIBK-image:main` for the services
+your `docker-compose.yaml` with `ghcr.io/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image:main` for the services
 `worker`, `app`, `north`, and `logtransfer`.
 
 If you want to use the `nomad.yaml` from this repository you also need to comment out
@@ -165,7 +183,7 @@ git checkout --theirs Dockerfile
 git checkout --theirs .github/workflows/docker-publish.yml
 ```
 
-For detailed instructions on how to resolve the merge conflicts between different version we refer you to the latest template release [notes](https://github.com/FAIRmat-NFDI/nomad-distribution-template/releases/latest)
+For detailed instructions on how to resolve the merge conflicts between different version we refer you to the latest [template release notes](https://github.com/FAIRmat-NFDI/nomad-distribution-template/releases/latest).
 
 Once the merge conflicts are resolved you should add the changes and commit them
 
@@ -179,10 +197,17 @@ Ideally all workflows should be triggered automatically but you might need to ru
 
 ## FAQ/Trouble shooting
 
- *I get an* `Error response from daemon: Head "https://ghcr.io/v2/fabianschoeppach/nomad-UIBK-image/manifests/main": unauthorized`
+ *I get an* `Error response from daemon: Head "https://ghcr.io/v2/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/manifests/main": unauthorized`
  *when trying to pull my docker image.*
  
  Most likely you have not made the package public or provided a personal access token (PAT).
  You can read how to make your package public in the GitHub docs [here](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility)
  or how to configure a PAT (if you want to keep the distribution private) in the GitHub
  docs [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic).
+
+## Acknowledgments
+
+Funding for this work has been provided by the European Union as part of the SolMates project (Project Nr. 101122288).
+
+<img src="assets/eu_funding_logo.png" alt="EU Funding Logo" width="300">
+<img src="assets/solmates_logo.png" alt="SolMates Logo" width="300">

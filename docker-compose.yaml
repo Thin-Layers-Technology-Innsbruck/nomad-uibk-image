@@ -2,7 +2,7 @@ services:
   # broker for celery
   rabbitmq:
     restart: unless-stopped
-    image: rabbitmq:3.11.5
+    image: docker.io/rabbitmq:3.11.5
     container_name: nomad_oasis_rabbitmq
     environment:
       - RABBITMQ_ERLANG_COOKIE=SWQOKODSQALRPCLNMEQG
@@ -21,7 +21,7 @@ services:
   # the search engine
   elastic:
     restart: unless-stopped
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.28
     container_name: nomad_oasis_elastic
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
@@ -43,7 +43,7 @@ services:
   # the user data db
   mongo:
     restart: unless-stopped
-    image: mongo:5.0.6
+    image: docker.io/mongo:5.0.6
     container_name: nomad_oasis_mongo
     environment:
       - MONGO_DATA_DIR=/data/db
@@ -68,7 +68,8 @@ services:
   # nomad worker (processing)
   worker:
     restart: unless-stopped
-    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
+    image: ghcr.io/fairmat-nfdi/nomad-distro-template:main
+    platform: linux/amd64
     container_name: nomad_oasis_worker
     environment:
       NOMAD_SERVICE: nomad_oasis_worker
@@ -86,12 +87,13 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m celery -A nomad.processing worker -l info -Q celery
+    command: python -m celery -A nomad.processing worker -l info -Q celery --max-tasks-per-child 128
 
   # nomad app (api + proxy)
   app:
     restart: unless-stopped
-    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
+    image: ghcr.io/fairmat-nfdi/nomad-distro-template:main
+    platform: linux/amd64
     container_name: nomad_oasis_app
     environment:
       NOMAD_SERVICE: nomad_oasis_app
@@ -130,7 +132,8 @@ services:
   # nomad remote tools hub (JupyterHUB, e.g. for AI Toolkit)
   north:
     restart: unless-stopped
-    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
+    image: ghcr.io/fairmat-nfdi/nomad-distro-template:main
+    platform: linux/amd64
     container_name: nomad_oasis_north
     environment:
       NOMAD_SERVICE: nomad_oasis_north
@@ -147,7 +150,7 @@ services:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
       - /var/run/docker.sock:/var/run/docker.sock
-    user: '1000:762'
+    user: "1000:991"
     command: python -m nomad.cli admin run hub
     healthcheck:
       test:
@@ -165,7 +168,8 @@ services:
   # to enable the logtransfer service run "docker compose --profile with_logtransfer up"
   logtransfer:
     restart: unless-stopped
-    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
+    image: ghcr.io/fairmat-nfdi/nomad-distro-template:main
+    platform: linux/amd64
     container_name: nomad_oasis_logtransfer
     environment:
       NOMAD_SERVICE: nomad_oasis_logtransfer
@@ -185,11 +189,17 @@ services:
   # nomad proxy (a reverse proxy for nomad)
   proxy:
     restart: unless-stopped
-    image: nginx:1.13.9-alpine
+    image: docker.io/nginx:1.27.4-alpine
     container_name: nomad_oasis_proxy
     command: nginx -g 'daemon off;'
     volumes:
-      - ./configs/nginx.conf:/etc/nginx/conf.d/default.conf
+      # Shared config
+      - ./configs/nginx_base_conf:/etc/nginx/conf.d/nginx_base_conf:ro
+      # HTTP
+      - ./configs/nginx_http.conf:/etc/nginx/conf.d/default.conf:ro
+      # HTTPS (you need to have an SSL certificate)
+      # - ./configs/nginx_https.conf:/etc/nginx/conf.d/default.conf:ro
+      # - ./ssl:/etc/nginx/ssl:ro
     depends_on:
       app:
         condition: service_healthy
@@ -199,6 +209,17 @@ services:
         condition: service_healthy
     ports:
       - 80:80
+      - 443:443
+
+  # jupyterlab image: (this is only used to pull the image, no service is run for this)
+  jupyterlab_image:
+    image: ghcr.io/fairmat-nfdi/nomad-distro-template/jupyter:main
+    platform: linux/amd64
+    container_name: nomad_jupyter_image
+    pull_policy: always
+    entrypoint: ["true"]
+    deploy:
+      replicas: 0 # Ensures the service isn't started
 
 volumes:
   mongo:

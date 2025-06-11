@@ -46,8 +46,8 @@ plugins = [
   #"nomad-parser-plugins-atomistic>=1.0",
   #"nomad-parser-plugins-workflow>=1.0",
   #"nomad-parser-plugins-database>=1.0",
-  "nomad-measurements>=1.0.1",
-  "nomad-material-processing>=1.0.4",
+  #"nomad-measurements>=1.0.1",
+  #"nomad-material-processing>=1.0.4",
   #"nomad-uibk-plugin",
 ]
 jupyter = []

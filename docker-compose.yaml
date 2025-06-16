@@ -2,7 +2,7 @@ services:
   # broker for celery
   rabbitmq:
     restart: unless-stopped
-    image: docker.io/rabbitmq:3.11.5
+    image: docker.io/rabbitmq:3.11.5-alpine
     container_name: nomad_oasis_rabbitmq
     environment:
       - RABBITMQ_ERLANG_COOKIE=SWQOKODSQALRPCLNMEQG
@@ -150,9 +150,10 @@ services:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
       - /var/run/docker.sock:/var/run/docker.sock
-    user: "1000"
-    group_add:
-      - docker
+    # user: "1000"
+    # group_add:
+    #  - docker
+    user: "1000:761"
     command: python -m nomad.cli admin run hub
     healthcheck:
       test:

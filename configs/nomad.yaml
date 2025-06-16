@@ -19,7 +19,7 @@ meta:
   maintainer_email: "nikolai.kraus@uibk.ac.at"
 
 logstash:
-  enable: false
+  enabled: false
 
 mongo:
   db_name: nomad_oasis_v1

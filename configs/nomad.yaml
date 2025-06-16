@@ -7,16 +7,16 @@ oasis:
   uses_central_user_management: true
 
 north:
-  jupyterhub_crypt_key: "978bfb2e13a8448a253c629d8dd84ff89587f30e635b753153960930cad9d36d"
+  jupyterhub_crypt_key: "3e1c6b17687a29a21bfe9d53e2c5e9ac423744fb69535b5a4874184a76010dde"
   tools:
     options:
       jupyter:
-        image: ghcr.io/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/jupyter:main
+        image: ghcr.io/thin-layers-technology-innsbruck/nomad-UIBK-image/jupyter:main
 
 meta:
   deployment: "oasis"
-  deployment_url: "https://my-oasis.org/api"
-  maintainer_email: "me@my-oasis.org"
+  deployment_url: "http://mti-thinfilmoasis.uibk.ac.at/api"
+  maintainer_email: "nikolai.kraus@uibk.ac.at"
 
 logstash:
   enable: false

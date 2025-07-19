@@ -2338,6 +2338,7 @@ dev = [
     { name = "nomad-lab", extra = ["dev", "infrastructure"] },
 ]
 jupyter = [
+    { name = "jupyterhub" },
     { name = "voila" },
 ]
 plugins = [
@@ -2347,6 +2348,7 @@ plugins = [
 
 [package.metadata]
 requires-dist = [
+    { name = "jupyterhub", marker = "extra == 'jupyter'", specifier = "<5" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.3.16" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.3.16" },
     { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.0.1" },

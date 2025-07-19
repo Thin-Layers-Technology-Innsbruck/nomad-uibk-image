@@ -11,7 +11,7 @@ north:
   tools:
     options:
       jupyter:
-        image: ghcr.io/thin-layers-technology-innsbruck/nomad-UIBK-image/jupyter:main
+        image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
 
 meta:
   deployment: "oasis"

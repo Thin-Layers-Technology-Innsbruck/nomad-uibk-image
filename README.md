@@ -1,4 +1,4 @@
-![docker image](https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/actions/workflows/docker-publish.yml/badge.svg)
+![docker image](https://github.com/Thin-Layers-Technology-Innsbruck/nomad-uibk-image/actions/workflows/docker-publish.yml/badge.svg)
 
 
 # Thin-Layers-Technology-Innsbruck's NOMAD Oasis Distribution
@@ -44,16 +44,16 @@ Below are instructions for how to deploy this NOMAD Oasis distribution
 2. Clone the repository or download the repository as a zip file.
 
     ```sh
-    git clone https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image.git
-    cd nomad-UIBK-image
+    git clone https://github.com/Thin-Layers-Technology-Innsbruck/nomad-uibk-image.git
+    cd nomad-uibk-image
     ```
 
     or
 
     ```sh
-    curl-L -o nomad-UIBK-image.zip "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/archive/main.zip"
-    unzip nomad-UIBK-image.zip
-    cd nomad-UIBK-image
+    curl-L -o nomad-uibk-image.zip "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-uibk-image/archive/main.zip"
+    unzip nomad-uibk-image.zip
+    cd nomad-uibk-image
     ```
 
 3. _On Linux only,_ recursively change the owner of the `.volumes` directory to the nomad user (1000)
@@ -311,7 +311,7 @@ Ideally all workflows should be triggered automatically but you might need to ru
 
 ## FAQ/Trouble shooting
 
-_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/Thin-Layers-Technology-Innsbruck/nomad-UIBK-image/manifests/main": unauthorized`
+_I get an_ `Error response from daemon: Head "https://ghcr.io/v2/Thin-Layers-Technology-Innsbruck/nomad-uibk-image/manifests/main": unauthorized`
 _when trying to pull my docker image._
 
 Most likely you have not made the package public or provided a personal access token (PAT).

@@ -22,7 +22,6 @@ requires-python = ">=3.10, <3.13"
 license = { file = "LICENSE" }
 dependencies = ["nomad-lab[parsing, infrastructure]>=1.3.16", "setuptools"]
 
-
 [project.urls]
 repository = "https://github.com/thin-layers-technology-innsbruck/nomad-uibk-image"
 
@@ -31,7 +30,7 @@ plugins = [
   "nomad-measurements>=1.0.1",
   "nomad-uibk-plugin",
 ]
-jupyter = ["voila"]
+jupyter = ["voila", 'jupyterhub<5']
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16"] 
 
 [tool.uv]

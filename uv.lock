@@ -1778,7 +1778,7 @@ wheels = [
 
 [[package]]
 name = "jupyterhub"
-version = "4.0.2"
+version = "4.1.6"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "alembic" },
@@ -1797,9 +1797,9 @@ dependencies = [
     { name = "tornado" },
     { name = "traitlets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a6/f0/f37ee5a5d8ec32aedcb99183f702dd56ef07d205d30926628a49ed0b73ec/jupyterhub-4.0.2.tar.gz", hash = "sha256:d4e450eed8d90dfbcf0eca08f00f2093a0bce74dc51f7cfc0b7057f602341a1d", size = 9072612, upload-time = "2023-08-10T09:30:03.445Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0d/95/5ab80047a1f8605793163644e70a9815d772c519b57c5faa674110fcc044/jupyterhub-4.1.6.tar.gz", hash = "sha256:9ee41780bcf4b6faca5edce1d0b0e5ccc3dc0e5711a82fab5c637006162da2d7", size = 9090735, upload-time = "2024-07-31T08:46:37.874Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/4c/1f9cb10007990023f24bebf049e3ac1fcdf846992e8470422da11bf53ee0/jupyterhub-4.0.2-py3-none-any.whl", hash = "sha256:2f389e7d3067e1b11bb4091719048eedecee161039fd2e5b025d031f7ab23c62", size = 3765672, upload-time = "2023-08-10T09:30:00.551Z" },
+    { url = "https://files.pythonhosted.org/packages/48/18/7cdd8e3abad8765b48c95bd30642de87f48df5bfe5599e735889fa52bddc/jupyterhub-4.1.6-py3-none-any.whl", hash = "sha256:3a625fae7fae069b4af1ab907c8cf51061f545ce7af2126d394d81f251acea61", size = 3806384, upload-time = "2024-07-31T08:46:35.43Z" },
 ]
 
 [[package]]
@@ -2747,7 +2747,7 @@ plugins = [
 
 [package.metadata]
 requires-dist = [
-    { name = "jupyterhub", marker = "extra == 'jupyter'", specifier = "<5" },
+    { name = "jupyterhub", marker = "extra == 'jupyter'", specifier = "<6" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.3.16" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.3.16" },
     { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.0.1" },

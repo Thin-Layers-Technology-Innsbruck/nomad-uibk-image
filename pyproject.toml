@@ -28,7 +28,7 @@ repository = "https://github.com/thin-layers-technology-innsbruck/nomad-uibk-ima
 [project.optional-dependencies]
 plugins = [
   "nomad-measurements>=1.0.1",
-  "nomad-uibk-plugin",
+  "nomad-uibk-plugin>=0.2.0",
   "pynxtools==0.10.9",
   "pynxtools-apm>=0.2.3",
 ]

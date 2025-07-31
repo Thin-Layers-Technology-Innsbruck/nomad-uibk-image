@@ -25,7 +25,7 @@ dependencies = ["nomad-lab[parsing, infrastructure]>=1.3.16", "setuptools"]
 [project.optional-dependencies]
 plugins = [
   "nomad-measurements>=1.0.1",
-  "nomad-uibk-plugin @ git+https://github.com/org/plugin.git@main",
+  "nomad-uibk-plugin @ git+https://github.com/org/plugin.git@v0.2.0",
   "pynxtools==0.10.9",
   "pynxtools-apm>=0.2.3",
 ]

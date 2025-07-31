@@ -39,8 +39,5 @@ extra-index-url = [
 constraint-dependencies = ["hyperspy>=1.7.6"]
 prerelease = "disallow"
 
-[tool.uv.sources]
-nomad-uibk-plugin = { git = "https://github.com/thin-layers-technology-innsbruck/nomad-uibk-plugin", rev = "v0.1.0" }
-
 [tool.setuptools.packages.find]
 exclude = ["gui*", "docs*", "config*"]

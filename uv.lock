@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <3.13"
 resolution-markers = [
     "python_full_version >= '3.12' and sys_platform == 'darwin'",
@@ -3746,7 +3746,7 @@ wheels = [
 
 [[package]]
 name = "pynxtools-apm"
-version = "0.2.3"
+version = "0.2.4"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "ifes-apt-tc-data-modeling" },
@@ -3754,9 +3754,9 @@ dependencies = [
     { name = "pint" },
     { name = "pynxtools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/51/be/49f9498f2f3317c5ae13363257ef7d854cf33c9f58a3a1b80e09f77ee318/pynxtools_apm-0.2.3.tar.gz", hash = "sha256:741bce07646be4e8e70182ea05f10b3ec3067109b5fe5a62527797611b905380", size = 52878, upload-time = "2025-03-25T15:44:34.754Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ce/db/71258cdd3368ece6a14776627deda37b46632a5c22776c7b798de37fb6ba/pynxtools_apm-0.2.4.tar.gz", hash = "sha256:4ec05c022dd9ca8cc94505ba156e9d931ce457a1a64f8bb55a541358cd3197a1", size = 52777, upload-time = "2025-07-29T13:17:04.753Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b4/f2/8c5758aa6e0cf5f6ad1d9f7f1d9eb7dc7b0e490e936eecd784c1bd12f525/pynxtools_apm-0.2.3-py3-none-any.whl", hash = "sha256:8de37d9ff29ea3d9b7a5a6976a1b10dff38cd4894c4669fbf45acde987dc9d73", size = 69216, upload-time = "2025-03-25T15:44:33.542Z" },
+    { url = "https://files.pythonhosted.org/packages/97/98/16f2b5ca6a25bb3e94cc81bee02d0dd8044da106db22adeacec8f61c126b/pynxtools_apm-0.2.4-py3-none-any.whl", hash = "sha256:2f6ef6c7ac7e3c0ca767bae04bc92fc0b8ed96bab70688a54cd05177110e0458", size = 69392, upload-time = "2025-07-29T13:17:03.485Z" },
 ]
 
 [[package]]

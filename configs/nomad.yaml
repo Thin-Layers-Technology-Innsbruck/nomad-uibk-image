@@ -1,6 +1,7 @@
 services:
   api_host: "localhost"
   api_base_path: "/nomad-oasis"
+  upload_limit: 1000
 
 oasis:
   is_oasis: true

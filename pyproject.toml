@@ -28,9 +28,27 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0",
   "pynxtools==0.11.1",
   "pynxtools-apm>=0.2.3",
+  'hzb-combinatorial-libraries @ git+https://github.com/nomad-hzb/hzb-combinatorial-libraries-plugin.git',
+  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop"
 ]
-jupyter = ["voila", 'jupyterhub<6']
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16"]
+jupyter = ["voila",
+ 'jupyterhub<6',
+ 'ipyaggrid',
+ 'ipyvuetify',
+ 'ipysheet',
+ 'ipydatagrid',
+ 'jupyter-flex',
+ 'ipympl',
+ #'baybe',
+ 'ipython<9.0',
+ 'pyvis',
+ 'lmfit',
+ 'jupyterlab_h5web',
+ 'jupyterlab>4.0',
+ 'seaborn', 
+ 'jupyterlab-spreadsheet-editor' # 'jupyterhub<5','oauthenticator<16'
+]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.17"]
 
 [tool.uv]
 extra-index-url = [

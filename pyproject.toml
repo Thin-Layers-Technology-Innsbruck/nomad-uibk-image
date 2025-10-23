@@ -18,9 +18,9 @@ name = "nomad-distribution"
 description = "nomad distribution template"
 dynamic = ["version"]
 readme = "README.md"
-requires-python = ">=3.10, <3.13"
+requires-python = ">=3.10"
 license = { file = "LICENSE" }
-dependencies = ["nomad-lab[parsing, infrastructure]>=1.3.16", "setuptools"]
+dependencies = ["nomad-lab[parsing, infrastructure]==1.3.17", "setuptools", plotly<6.0]
 
 [project.optional-dependencies]
 plugins = [
@@ -28,7 +28,12 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0",
   "pynxtools==0.11.1",
   "pynxtools-apm>=0.2.3",
+  "perovskite-solar-cell-database @ git+https://github.com/FAIRmat-NFDI/nomad-perovskite-solar-cells-database.git",
+  'nomad-material-processing @ git+https://github.com/FAIRmat-NFDI/nomad-material-processing.git@103-add-specialized-combinatorialsample-schema',
+  'nomad-baseclasses @ git+https://github.com/nomad-hzb/nomad-baseclasses.git',
+  'nomad-hysprint @ git+https://github.com/nomad-hzb/nomad-hysprint.git',
   'hzb-combinatorial-libraries @ git+https://github.com/nomad-hzb/hzb-combinatorial-libraries-plugin.git',
+  'nomad-chemical-energy @ git+https://github.com/nomad-hzb/nomad-chemical-energy.git',
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop"
 ]
 jupyter = ["voila",

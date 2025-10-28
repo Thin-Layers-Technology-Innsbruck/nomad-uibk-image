@@ -28,14 +28,7 @@ plugins = [
   'nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0',
   'pynxtools>=0.11.1',
   'pynxtools-apm>=0.2.3',
-  'perovskite-solar-cell-database @ git+https://github.com/FAIRmat-NFDI/nomad-perovskite-solar-cells-database.git',
-  'nomad-material-processing',
-  'nomad-baseclasses @ git+https://github.com/nomad-hzb/nomad-baseclasses.git',
-  'nomad-hysprint @ git+https://github.com/nomad-hzb/nomad-hysprint.git',
-  'hzb-combinatorial-libraries @ git+https://github.com/nomad-hzb/hzb-combinatorial-libraries-plugin.git',
-  'nomad-chemical-energy @ git+https://github.com/nomad-hzb/nomad-chemical-energy.git',
   'nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop',
-  'nomad-chemical-energy @ git+https://github.com/nomad-hzb/nomad-chemical-energy.git'
 ]
 jupyter = ['voila',
  'voila',

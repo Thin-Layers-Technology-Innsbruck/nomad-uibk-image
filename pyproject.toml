@@ -24,11 +24,18 @@ dependencies = ['nomad-lab[parsing, infrastructure]==1.3.17', 'setuptools', 'plo
 
 [project.optional-dependencies]
 plugins = [
+<<<<<<< HEAD
   'nomad-measurements>=1.0.1',
   'nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0',
   'pynxtools>=0.11.1',
   'pynxtools-apm>=0.2.3',
   'nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop',
+=======
+  "nomad-measurements>=1.0.1",
+  "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0",
+  "pynxtools==0.12.0",
+  "pynxtools-apm>=0.2.3",
+>>>>>>> origin/dependabot/uv/pynxtools-0.12.0
 ]
 jupyter = ['voila',
  'voila',

@@ -28,6 +28,7 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@v0.3.0",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.2.3",
+  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop",
 ]
 jupyter = ["voila", 'jupyterhub<6']
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16"]

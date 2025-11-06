@@ -14,6 +14,12 @@ north:
       jupyter:
         image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
 
+ui:
+  theme:
+    title: "NOMAD TLT-UIBK"
+  unit_system:
+    selected: "SI"
+
 meta:
   deployment: "oasis"
   deployment_url: "http://mti-thinfilmoasis.uibk.ac.at/api"

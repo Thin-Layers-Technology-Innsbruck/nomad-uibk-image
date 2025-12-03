@@ -2781,7 +2781,7 @@ requires-dist = [
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.4.0" },
     { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.3.4" },
     { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop" },
-    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=v0.4.0" },
+    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=a6df89a4939d660433766a9755a4091f1774f5e9" },
     { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.12.0" },
     { name = "pynxtools-apm", marker = "extra == 'plugins'", specifier = ">=0.4.2" },
     { name = "setuptools" },
@@ -2931,8 +2931,8 @@ dependencies = [
 
 [[package]]
 name = "nomad-uibk-plugin"
-version = "0.4.0"
-source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=v0.4.0#c6f8eb2f22e257434af5182dce9ba92be9edfb51" }
+version = "0.4.1.dev1+ga6df89a49"
+source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=a6df89a4939d660433766a9755a4091f1774f5e9#a6df89a4939d660433766a9755a4091f1774f5e9" }
 dependencies = [
     { name = "ifm-imagesegmentation" },
     { name = "nomad-lab", extra = ["infrastructure"] },

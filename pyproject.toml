@@ -40,7 +40,7 @@ jupyter = ["voila", "jupyterhub<6"]
 gpu-action = []
 cpu-action = []
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.16"]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.0"]
 
 [tool.uv]
 extra-index-url = [

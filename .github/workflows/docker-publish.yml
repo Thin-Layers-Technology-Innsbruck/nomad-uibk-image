@@ -158,6 +158,11 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository }}${{ matrix.image_suffix }}
 
+      - name: Free disk space used by Docker
+        run: |
+          docker system prune -af || true
+          docker builder prune -af || true
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:

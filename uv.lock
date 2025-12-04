@@ -2900,6 +2900,9 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+cpu-action = [
+    { name = "nomad-uibk-plugin" },
+]
 dev = [
     { name = "nomad-lab", extra = ["dev", "infrastructure"] },
 ]
@@ -2927,6 +2930,7 @@ requires-dist = [
     { name = "nomad-schema-plugin-run", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
     { name = "nomad-schema-plugin-simulation-workflow", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
     { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=v0.4.1" },
+    { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'" },
     { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.12.0" },
     { name = "pynxtools-apm", marker = "extra == 'plugins'", specifier = ">=0.4.2" },
     { name = "setuptools" },

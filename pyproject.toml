@@ -35,7 +35,11 @@ plugins = [
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop",
 ]
-jupyter = ["voila", "jupyterhub<5.0.0"]
+jupyter = [
+  "voila",
+  "jupyterhub<5.0.0",
+  "jupyterlab_server>=2.27.1,<3",
+]
 gpu-action = []
 cpu-action = [
   "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@OrganizeDependencies",

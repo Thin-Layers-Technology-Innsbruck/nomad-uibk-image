@@ -40,7 +40,9 @@ plugins = [
 ]
 jupyter = ["voila", "jupyterhub<6"]
 gpu-action = []
-cpu-action = []
+cpu-action = [
+  "nomad-uibk-plugin[cpu-action]",
+]
 
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.0"]
 

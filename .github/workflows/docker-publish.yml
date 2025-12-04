@@ -29,6 +29,7 @@ env:
     atomisticparsers
     nomad_aitoolkit
     pynxtools_igor
+    pynxtools_apm
     electronicparsers
     nomad_simulations
 

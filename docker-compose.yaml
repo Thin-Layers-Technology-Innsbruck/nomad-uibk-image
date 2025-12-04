@@ -185,7 +185,7 @@ services:
   # nomad cpu worker (actions)
   cpu_worker:
     restart: unless-stopped
-    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
+    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/cpu-action:main
     platform: linux/amd64
     container_name: nomad_oasis_cpu_worker
     env_file:

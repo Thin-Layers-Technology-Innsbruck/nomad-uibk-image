@@ -1,0 +1,4 @@
+opencv-python==0
+opencv-python-headless
+hyperspy>=1.7.6
+pillow<10.1

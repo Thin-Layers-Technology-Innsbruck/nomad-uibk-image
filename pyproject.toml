@@ -20,7 +20,6 @@ license = { file = "LICENSE" }
 dependencies = [
   "nomad-lab[parsing, infrastructure]>=1.4.0",
   "setuptools",
-  "imageio",
 ]
 
 [project.urls]

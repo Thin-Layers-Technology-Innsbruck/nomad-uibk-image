@@ -2913,6 +2913,7 @@ wheels = [
 name = "nomad-distribution"
 source = { editable = "." }
 dependencies = [
+    { name = "imageio" },
     { name = "nomad-lab", extra = ["infrastructure"] },
     { name = "setuptools" },
 ]
@@ -2941,6 +2942,7 @@ plugins = [
 
 [package.metadata]
 requires-dist = [
+    { name = "imageio" },
     { name = "jupyterhub", marker = "extra == 'jupyter'", specifier = "<5.0.0" },
     { name = "jupyterlab-server", marker = "extra == 'jupyter'", specifier = ">=2.27.1,<3" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.4.0" },

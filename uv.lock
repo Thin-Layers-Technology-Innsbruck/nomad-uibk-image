@@ -3124,7 +3124,7 @@ wheels = [
 [[package]]
 name = "nomad-uibk-plugin"
 version = "0.4.2.dev2+gca1eb73cc"
-source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=OrganizeDependencies#ca1eb73ccddd60c1e8f907aa69aeff19d57688ba" }
+source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=OrganizeDependencies#70de563c6ad64d828399e5b7436807ef4abe7ff3" }
 dependencies = [
     { name = "nomad-lab", extra = ["infrastructure"] },
     { name = "nomad-material-processing" },

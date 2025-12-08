@@ -48,9 +48,19 @@ RUN apt-get update \
        unzip \
        nodejs \
        npm \
+       # seems to be required for open cv:
+       libgl1-mesa-glx \
+       # german locales for date/time operations:
+       locales \
        && npm install -g configurable-http-proxy@^4.2.0 \
+       && sed -i 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
+       && locale-gen \
        # clean cache and logs
        && rm -rf /var/lib/apt/lists/* /var/log/* /var/tmp/* ~/.npm
+
+ENV LANG=de_DE.UTF-8 \
+    LANGUAGE=de_DE:de \
+    LC_ALL=de_DE.UTF-8
 
 # Activate the virtualenv in the container
 # See here for more information:

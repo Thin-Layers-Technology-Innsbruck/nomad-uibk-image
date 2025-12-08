@@ -48,6 +48,9 @@ RUN apt-get update \
        unzip \
        nodejs \
        npm \
+       # requirements for opencv
+       libgl1 \
+       libglx-mesa0 \
        # german locales for date/time operations:
        locales \
        && npm install -g configurable-http-proxy@^4.2.0 \

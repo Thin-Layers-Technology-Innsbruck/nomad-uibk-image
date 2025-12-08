@@ -21,7 +21,7 @@ ENV VIRTUAL_ENV=/opt/venv \
     UV_FROZEN=1 \
     UV_PROJECT_ENVIRONMENT=/opt/venv
 
-# Create a non-privileged user that the frenrug will run under.
+# Create a non-privileged user.
 # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
 ARG UID=1000
 RUN adduser \
@@ -48,9 +48,21 @@ RUN apt-get update \
        unzip \
        nodejs \
        npm \
+       # requirements for opencv
+       libgl1 \
+       libglx-mesa0 \
+       libglib2.0-0 \
+       # german locales for date/time operations:
+       locales \
        && npm install -g configurable-http-proxy@^4.2.0 \
+       && sed -i 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen \
+       && locale-gen \
        # clean cache and logs
        && rm -rf /var/lib/apt/lists/* /var/log/* /var/tmp/* ~/.npm
+
+ENV LANG=de_DE.UTF-8 \
+    LANGUAGE=de_DE:de \
+    LC_ALL=de_DE.UTF-8
 
 # Activate the virtualenv in the container
 # See here for more information:
@@ -105,9 +117,27 @@ RUN set -ex && \
 RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv run --all-extras --directory docs mkdocs build \
+    uv run --with nomad-docs --directory docs mkdocs build \
     && mkdir -p built_docs \
     && cp -r docs/site/* built_docs
+
+FROM builder AS gpu_action_builder
+
+WORKDIR /app
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --extra plugins --extra gpu-action
+
+FROM builder AS cpu_action_builder
+
+WORKDIR /app
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --extra plugins --extra cpu-action
 
 FROM base_final AS final
 
@@ -117,6 +147,7 @@ COPY --chown=nomad:${UID} --from=builder /opt/venv /opt/venv
 COPY --chown=nomad:${UID} scripts/run.sh .
 COPY --chown=nomad:${UID} scripts/run-worker.sh .
 COPY configs/nomad.yaml nomad.yaml
+COPY pyproject.toml uv.lock /opt/
 COPY --chown=nomad:${UID} --from=docs /app/built_docs /opt/venv/lib/python${PYTHON_VERSION}/site-packages/nomad/app/static/docs
 
 RUN mkdir -p /app/.volumes/fs \
@@ -133,6 +164,14 @@ EXPOSE 8000
 EXPOSE 9000
 
 VOLUME /app/.volumes/fs
+
+FROM final AS cpu_action_final
+
+COPY --chown=nomad:${UID} --from=cpu_action_builder /opt/venv /opt/venv
+
+FROM final AS gpu_action_final
+
+COPY --chown=nomad:${UID} --from=gpu_action_builder /opt/venv /opt/venv
 
 
 FROM quay.io/jupyter/base-notebook:${JUPYTER_VERSION} AS jupyter_builder

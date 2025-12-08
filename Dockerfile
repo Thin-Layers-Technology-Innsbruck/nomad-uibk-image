@@ -48,8 +48,6 @@ RUN apt-get update \
        unzip \
        nodejs \
        npm \
-       # seems to be required for open cv:
-       libgl1-mesa-glx \
        # german locales for date/time operations:
        locales \
        && npm install -g configurable-http-proxy@^4.2.0 \

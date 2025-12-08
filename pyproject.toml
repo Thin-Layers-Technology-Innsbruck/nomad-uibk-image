@@ -52,7 +52,10 @@ extra-index-url = [
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple",
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/8647/packages/pypi/simple",
 ]
-constraints = ["constraints.txt"]
+constraint-dependencies = [ # can be removed once pynxtools removes kikuchipy restriction
+  "hyperspy>=1.7.6",
+  "pillow<10.1",
+]
 required-version = ">=0.8.0"
 prerelease = "explicit"
 

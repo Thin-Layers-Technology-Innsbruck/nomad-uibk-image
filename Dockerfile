@@ -51,6 +51,7 @@ RUN apt-get update \
        # requirements for opencv
        libgl1 \
        libglx-mesa0 \
+       libglib2.0-0 \
        # german locales for date/time operations:
        locales \
        && npm install -g configurable-http-proxy@^4.2.0 \

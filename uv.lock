@@ -1599,6 +1599,30 @@ wheels = [
 ]
 
 [[package]]
+name = "ipyvue"
+version = "1.11.3"
+source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
+dependencies = [
+    { name = "ipywidgets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9a/6c/01b55711d120dcc9e31e2c514671fe0d6932e6fd402871d18fd034220da5/ipyvue-1.11.3.tar.gz", hash = "sha256:80b3b6108b448eb17b7c9eb0c39b5ad384718abdcd24a82f853ad3062b83b41b", size = 1744625, upload-time = "2025-09-10T11:18:59.295Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/48/f4/93c187f69bbd58669d315f5463124ef62484a24335bc6702d19c83d1311e/ipyvue-1.11.3-py2.py3-none-any.whl", hash = "sha256:f6f4680a8b61c190dd56a461b5c595d05d84699dde2f7dd5c43f5db7520c6028", size = 2670770, upload-time = "2025-09-10T11:18:57.951Z" },
+]
+
+[[package]]
+name = "ipyvuetify"
+version = "1.11.3"
+source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
+dependencies = [
+    { name = "ipyvue" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a4/07/31c9615532b6c190a3033460e4aa83a64ac532281758ff734e1bc42e3c00/ipyvuetify-1.11.3.tar.gz", hash = "sha256:3580afa76d9add4ae04ccb7fd57d4a0cf03a261705742e7137def3ebb65ac71d", size = 6170730, upload-time = "2025-07-02T11:25:12.691Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/47/4d/fd1a6a888f8abb6b8dc316cc78b5153e75eff7ae66a94cf30b144fadd09d/ipyvuetify-1.11.3-py2.py3-none-any.whl", hash = "sha256:fa83aaf9f4ce669172d532094d60bd7c40d3cb9c5d6bb2f4a14565da2b09a8d8", size = 6290266, upload-time = "2025-07-02T11:25:10.553Z" },
+]
+
+[[package]]
 name = "ipywidgets"
 version = "8.1.7"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
@@ -2949,8 +2973,8 @@ requires-dist = [
     { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop" },
     { name = "nomad-schema-plugin-run", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
     { name = "nomad-schema-plugin-simulation-workflow", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
-    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=OrganizeDependencies" },
-    { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=OrganizeDependencies" },
+    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
+    { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
     { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.12.0" },
     { name = "pynxtools-apm", marker = "extra == 'plugins'", specifier = ">=0.4.2" },
     { name = "setuptools" },
@@ -3077,11 +3101,12 @@ wheels = [
 [[package]]
 name = "nomad-pvcomb"
 version = "1.0.0"
-source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop#d1676d8c9d19bc0a079a0e46fc34d8b8eca0dd2b" }
+source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop#018aa1a9622883352cfdbb316694e800164b07e5" }
 dependencies = [
     { name = "chardet" },
     { name = "hdf5plugin" },
     { name = "igor2" },
+    { name = "ipyvuetify" },
     { name = "lmfit" },
     { name = "markdown2" },
     { name = "matid" },
@@ -3132,12 +3157,13 @@ wheels = [
 
 [[package]]
 name = "nomad-uibk-plugin"
-version = "0.4.2.dev11+g70de563c6"
-source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=OrganizeDependencies#70de563c6ad64d828399e5b7436807ef4abe7ff3" }
+version = "0.5.1"
+source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main#b49d7f019af5f16338a01ece5ca8b452fc2692c7" }
 dependencies = [
     { name = "nomad-lab", extra = ["infrastructure"] },
     { name = "nomad-material-processing" },
     { name = "nomad-measurements" },
+    { name = "nomad-pvcomb" },
     { name = "pandas" },
     { name = "pillow" },
     { name = "plotly" },

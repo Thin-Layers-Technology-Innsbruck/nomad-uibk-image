@@ -2970,11 +2970,11 @@ requires-dist = [
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.4.0" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.4.0" },
     { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.3.4" },
-    { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=fix_circular_import" },
+    { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop" },
     { name = "nomad-schema-plugin-run", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
     { name = "nomad-schema-plugin-simulation-workflow", marker = "extra == 'plugins'", specifier = ">=1.0.1" },
-    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=FixCircularImportsInOASIS" },
-    { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=FixCircularImportsInOASIS" },
+    { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
+    { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
     { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.12.0" },
     { name = "pynxtools-apm", marker = "extra == 'plugins'", specifier = ">=0.4.2" },
     { name = "setuptools" },
@@ -3101,7 +3101,7 @@ wheels = [
 [[package]]
 name = "nomad-pvcomb"
 version = "1.0.0"
-source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=fix_circular_import#0afe0f88c78ab2ab5744b8cce4bd8f5b1375c195" }
+source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=develop#018aa1a9622883352cfdbb316694e800164b07e5" }
 dependencies = [
     { name = "chardet" },
     { name = "hdf5plugin" },
@@ -3157,8 +3157,8 @@ wheels = [
 
 [[package]]
 name = "nomad-uibk-plugin"
-version = "0.5.1.dev3+g82d91ccac"
-source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=FixCircularImportsInOASIS#624dc9a737173ca5a06d6892c1c3b59142968d9c" }
+version = "0.5.1"
+source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main#b49d7f019af5f16338a01ece5ca8b452fc2692c7" }
 dependencies = [
     { name = "nomad-lab", extra = ["infrastructure"] },
     { name = "nomad-material-processing" },

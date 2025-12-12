@@ -33,7 +33,7 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@FixCircularImportsInOASIS",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.4.2",
-  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
+  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@fix_circular_import",
 ]
 jupyter = [
   "voila",

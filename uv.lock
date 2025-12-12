@@ -3133,7 +3133,7 @@ wheels = [
 [[package]]
 name = "nomad-uibk-plugin"
 version = "0.5.1.dev1+g8f25c81a0"
-source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=FixCircularImportsInOASIS#8f25c81a03d59b03331a4a06db0ceb2c1fe543fe" }
+source = { git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=FixCircularImportsInOASIS#98fd1417ac58fa102b92fc65a43f71764a24080b" }
 dependencies = [
     { name = "nomad-lab", extra = ["infrastructure"] },
     { name = "nomad-material-processing" },

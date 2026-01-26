@@ -4345,15 +4345,15 @@ wheels = [
 
 [[package]]
 name = "pynxtools-apm"
-version = "0.4.2"
+version = "0.4.3"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "ifes-apt-tc-data-modeling" },
     { name = "pynxtools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/81/75/035ff6d352b168ed683c64b5ee290300ab99ed02e00f998fc6f8cd88dc67/pynxtools_apm-0.4.2.tar.gz", hash = "sha256:9887063507596543555705d58d1ba649e9c8dd9e3e03a41dc6965f7569360f66", size = 59315, upload-time = "2025-10-17T16:30:14.754Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c6/d2/1a99f9d7c5a90e434cdbb0ab2d5382e057836eb25834b97720ccf1a7b8fc/pynxtools_apm-0.4.3.tar.gz", hash = "sha256:0887e389136c81204b47fc319d70145d3a0ebe8399e3e61b0037fb35f06c734c", size = 58497, upload-time = "2026-01-23T12:19:03.872Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f2/2d/1fe882fe83bbcbab8c40c08cd68b4e55f4b5e74f1a43e64c2fb2ca58bd00/pynxtools_apm-0.4.2-py3-none-any.whl", hash = "sha256:72432ea4b369d52545fa6301401104fb2b579ecfbe78502e61606febe411abaa", size = 83281, upload-time = "2025-10-17T16:30:13.161Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/d1/049c53908a033dd0ff42fdd6cae0a3bb73ca1c301e12530b6d9ac808809d/pynxtools_apm-0.4.3-py3-none-any.whl", hash = "sha256:21b89877a15b45d18179d52524bbcb64dd9caa06ac61f0f0f04dc073eefae9df", size = 85159, upload-time = "2026-01-23T12:19:02.323Z" },
 ]
 
 [[package]]

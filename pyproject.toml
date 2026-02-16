@@ -18,7 +18,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.1",
+  "nomad-lab[parsing, infrastructure]==1.4.1",
   "setuptools",
   "plotly<6.0",
 ]
@@ -52,7 +52,7 @@ cpu-action = [
   "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
 ]
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.0"]
+dev = ["nomad-lab[parsing, infrastructure, dev]==1.4.1"]
 
 [tool.uv]
 extra-index-url = [

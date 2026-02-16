@@ -21,7 +21,19 @@ env:
   NOMAD_DOCS_REPO_REF: "main"
   # If you want to skip the tests for some plugins, add them here as a single string where
   # each plugin is separated by whitespace
-  PLUGIN_TESTS_PLUGINS_TO_SKIP: "workflowparsers nomad_porous_materials simulationworkflowschema databaseparsers soapnormalizer eelsdbparser atomisticparsers nomad_aitoolkit pynxtools_igor pynxtools_apm electronicparsers nomad_simulations"
+  PLUGIN_TESTS_PLUGINS_TO_SKIP: |
+    workflowparsers
+    nomad_porous_materials
+    simulationworkflowschema
+    databaseparsers
+    soapnormalizer
+    eelsdbparser
+    atomisticparsers
+    nomad_aitoolkit
+    pynxtools_igor
+    pynxtools_apm
+    electronicparsers
+    nomad_simulations
 
 permissions:
   contents: write

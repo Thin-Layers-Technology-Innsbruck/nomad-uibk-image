@@ -3740,7 +3740,7 @@ requires-dist = [
     { name = "jupyterhub", marker = "extra == 'jupyter'", specifier = "<5.0.0" },
     { name = "jupyterlab-server", marker = "extra == 'jupyter'", specifier = ">=2.27.1,<3" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.4.1" },
-    { name = "nomad-lab", extras = ["infrastructure"], specifier = ">=1.4.1" },
+    { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.4.1" },
     { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.3.4" },
     { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=main" },
     { name = "nomad-schema-plugin-run", marker = "extra == 'plugins'", specifier = ">=1.0.1" },

@@ -18,8 +18,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.0",
-  "setuptools",
+  "nomad-lab[infrastructure]>=1.4.1",
 ]
 
 [project.urls]
@@ -33,12 +32,13 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.4.2",
-  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@develop",
+  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
 ]
 jupyter = [
   "voila",
   "jupyterhub<5.0.0",
   "jupyterlab_server>=2.27.1,<3",
+  "jupyter-events",
 ]
 gpu-action = []
 cpu-action = [
@@ -58,6 +58,8 @@ constraint-dependencies = [ # can be removed once pynxtools removes kikuchipy re
 ]
 required-version = ">=0.8.0"
 prerelease = "explicit"
+# https://github.com/gmr/flatdict/issues/60
+extra-build-dependencies = { flatdict = ["setuptools<82.0.0"] }
 
 [tool.uv.sources]
 torch = [{ index = "pytorch-cpu" }]

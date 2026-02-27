@@ -3886,7 +3886,7 @@ dependencies = [
 [[package]]
 name = "nomad-pvcomb"
 version = "1.0.0"
-source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=main#e9c452e43ce203f8a23fa0fce8258684980597c4" }
+source = { git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=main#7aca6eff3124464dc89b120d64ba67f57b42b34d" }
 dependencies = [
     { name = "chardet" },
     { name = "hdf5plugin" },

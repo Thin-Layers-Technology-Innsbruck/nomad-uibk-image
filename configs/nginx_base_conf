@@ -16,6 +16,10 @@ gzip_types
     application/x-javascript
     application/json;
 
+# Docker embedded DNS resolver
+# Ensures nginx can re-resolve container IPs when they restart
+resolver 127.0.0.11 valid=30s;
+
 location / {
     proxy_pass http://app:8000;
 }
@@ -82,5 +86,27 @@ location /nomad-oasis/north/ {
     proxy_set_header Connection $connection_upgrade;
     proxy_set_header X-Scheme $scheme;
 
+    proxy_buffering off;
+}
+
+location /grafana/ {
+
+    # Optional additional authentication layer
+    auth_basic "Grafana";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    proxy_pass http://grafana:3000/;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Scheme $scheme;
+
+    # WebSocket support (Grafana live dashboards)
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+
+    # Disable buffering for streaming responses
     proxy_buffering off;
 }

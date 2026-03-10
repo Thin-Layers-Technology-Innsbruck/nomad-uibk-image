@@ -333,10 +333,10 @@ services:
       # Shared config
       - ./configs/nginx_base_conf:/etc/nginx/conf.d/nginx_base_conf:ro
       # HTTP
-      - ./configs/nginx_http.conf:/etc/nginx/conf.d/default.conf:ro
+      # - ./configs/nginx_http.conf:/etc/nginx/conf.d/default.conf:ro
       # HTTPS (you need to have an SSL certificate)
-      # - ./configs/nginx_https.conf:/etc/nginx/conf.d/default.conf:ro
-      # - ./ssl:/etc/nginx/ssl:ro
+      - ./configs/nginx_https.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
     depends_on:
       app:
         condition: service_healthy

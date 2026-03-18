@@ -62,7 +62,6 @@ extra-index-url = [
 ]
 constraint-dependencies = [ # can be removed once pynxtools removes kikuchipy restriction
   "hyperspy>=1.7.6",
-  "pillow<10.1",
   "pyzmq<=27.0.0",
   "h5grove[fastapi]<3", # temporary restriction due to breaking changes in h5grove v3.0.0
 ]

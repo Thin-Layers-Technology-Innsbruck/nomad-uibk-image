@@ -3874,8 +3874,8 @@ wheels = [
 
 [[package]]
 name = "nomad-north-voila"
-version = "0.1.4.post1.dev1+g6567a975d"
-source = { git = "https://github.com/FAIRmat-NFDI/nomad-north-voila.git?rev=main#6567a975d59503d78845572f5acf5b56ebbe3139" }
+version = "0.1.13"
+source = { git = "https://github.com/FAIRmat-NFDI/nomad-north-voila.git?rev=main#ad0e3fab5f70ecfc2d0c6c767963e9a2489f9926" }
 dependencies = [
     { name = "nomad-lab" },
 ]

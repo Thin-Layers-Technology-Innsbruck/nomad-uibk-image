@@ -3750,7 +3750,7 @@ requires-dist = [
     { name = "nomad-uibk-plugin", marker = "extra == 'plugins'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
     { name = "nomad-uibk-plugin", extras = ["cpu-action"], marker = "extra == 'cpu-action'", git = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git?rev=main" },
     { name = "plotly", specifier = "<6.0" },
-    { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.12.0" },
+    { name = "pynxtools", marker = "extra == 'plugins'", specifier = "==0.13.1" },
     { name = "pynxtools-apm", marker = "extra == 'plugins'", specifier = ">=0.4.2" },
     { name = "pyvis", marker = "extra == 'jupyter'" },
     { name = "voila", marker = "extra == 'jupyter'" },
@@ -5400,7 +5400,7 @@ wheels = [
 
 [[package]]
 name = "pynxtools"
-version = "0.12.0"
+version = "0.13.1"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "anytree" },
@@ -5413,6 +5413,7 @@ dependencies = [
     { name = "lxml" },
     { name = "mergedeep" },
     { name = "numpy" },
+    { name = "orjson" },
     { name = "pandas" },
     { name = "pint", version = "0.24.4", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pint", version = "0.25.2", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version >= '3.11'" },
@@ -5422,9 +5423,9 @@ dependencies = [
     { name = "xarray", version = "2025.6.1", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version < '3.11'" },
     { name = "xarray", version = "2026.2.0", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/37/84/22fabe423ee233c7a1e2dbd0adb07f331d6f2541d26e1b79253e4099ca5b/pynxtools-0.12.0.tar.gz", hash = "sha256:256f5a87cde4b0b673f17df24a5ca0701f89a82e14e6b630c3515761c5d6dee2", size = 5363625, upload-time = "2025-10-17T16:21:49.155Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/62/8cecdee88ecfd42d12ea7848da8bc38b998272520302633c1dc5e0a8df03/pynxtools-0.13.1.tar.gz", hash = "sha256:d317b7d0308713707dae2ec122cc3022c667a7a1db7ad2e0c2fd05e26980c86f", size = 6589734, upload-time = "2026-03-23T09:16:27.567Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/92/b4/005eecd3794e5b882ab713188d16a65447d57ef738c86b7fe562d24126e9/pynxtools-0.12.0-py3-none-any.whl", hash = "sha256:ccae769db50e5e0467dea779b748111a6a6e5748d86aa7ba8d01b2457c8f8e7a", size = 5738386, upload-time = "2025-10-17T16:21:45.7Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/09/44f1470ca3ab6583e0d020041d2e210c99ab735fb8c0318adb61bd264dd5/pynxtools-0.13.1-py3-none-any.whl", hash = "sha256:bd70b2d67602830fe874b806aa02af9e326dd0dcf050d3043ff88d36d3f5e2b0", size = 7096071, upload-time = "2026-03-23T09:16:25.704Z" },
 ]
 
 [[package]]

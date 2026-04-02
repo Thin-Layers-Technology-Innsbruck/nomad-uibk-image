@@ -31,7 +31,7 @@ plugins = [
   "nomad-schema-plugin-run>=1.0.1",
   "nomad-schema-plugin-simulation-workflow>=1.0.1",
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
-  "pynxtools==0.12.0",
+  "pynxtools==0.13.2",
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",

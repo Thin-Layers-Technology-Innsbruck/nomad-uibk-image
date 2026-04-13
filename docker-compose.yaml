@@ -9,6 +9,10 @@ services:
       - RABBITMQ_DEFAULT_USER=rabbitmq
       - RABBITMQ_DEFAULT_PASS=rabbitmq
       - RABBITMQ_DEFAULT_VHOST=/
+    deploy:
+      resources:
+          limits:
+            memory: 1G
     volumes:
       - rabbitmq:/var/lib/rabbitmq
     healthcheck:
@@ -26,6 +30,10 @@ services:
     environment:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - discovery.type=single-node
+    deploy:
+      resources:
+        limits:
+          memory: 4G
     volumes:
       - elastic:/usr/share/elasticsearch/data
     healthcheck:
@@ -48,6 +56,10 @@ services:
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
+    deploy:
+      resources:
+        limits:
+          memory: 1G
     volumes:
       - mongo:/data/db
       - ./.volumes/mongo:/backup
@@ -70,6 +82,10 @@ services:
     environment:
       POSTGRES_PASSWORD: temporal
       POSTGRES_USER: temporal
+    deploy:
+      resources:
+        limits:
+          memory: 1G
     image: docker.io/postgres:16
     volumes:
       - postgresql:/var/lib/postgresql/data
@@ -134,7 +150,7 @@ services:
       retries: 5
       start_period: 15s
     deploy:
-      replicas: 4
+      replicas: 2
       resources:
         limits:
           cpus: "4.0" # Maximum 4 CPU cores
@@ -233,6 +249,10 @@ services:
       NOMAD_LOGSTASH_HOST: logtransfer
       NOMAD_NORTH_HUB_HOST: north
       NOMAD_TEMPORAL_HOST: temporal
+    deploy:
+      resources:
+        limits:
+          memory: 4G
     env_file:
       - ./.env
     depends_on:
@@ -281,6 +301,10 @@ services:
       NOMAD_MONGO_HOST: mongo
     env_file:
       - ./.env
+    deploy:
+      resources:
+        limits:
+          memory: 4G
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
@@ -312,6 +336,10 @@ services:
       NOMAD_MONGO_HOST: mongo
     env_file:
       - ./.env
+    deploy:
+      resources:
+        limits:
+          memory: 512M
     depends_on:
       elastic:
         condition: service_healthy
@@ -329,6 +357,10 @@ services:
     image: docker.io/nginx:1.27.4-alpine
     container_name: nomad_oasis_proxy
     command: nginx -g 'daemon off;'
+    deploy:
+      resources:
+        limits:
+          memory: 512M
     volumes:
       # Shared config
       - ./configs/nginx_base_conf:/etc/nginx/conf.d/nginx_base_conf:ro
@@ -357,6 +389,9 @@ services:
     entrypoint: ["true"]
     deploy:
       replicas: 0 # Ensures the service isn't started
+      resources:
+        limits:
+          memory: 1G
 
 volumes:
   mongo:

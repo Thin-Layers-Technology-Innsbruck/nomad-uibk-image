@@ -1,6 +1,7 @@
 ## Custom
 # SSL
 ssl/
+configs/nomad.secrets.yaml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

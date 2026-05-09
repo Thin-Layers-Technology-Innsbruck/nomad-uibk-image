@@ -17,8 +17,9 @@ dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
+
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.1",
+  "nomad-lab[parsing, infrastructure]>=1.4.2",
   "plotly<6.0",
 ]
 
@@ -35,6 +36,7 @@ plugins = [
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",
+  "nomad-north-jupyter>=0.2.5",
 ]
 jupyter = [
   "voila",
@@ -48,12 +50,13 @@ jupyter = [
   "ipympl",
   "ipyvuetify",
 ]
+
 gpu-action = []
 cpu-action = [
   "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
 ]
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.1"]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.2"]
 
 [tool.uv]
 extra-index-url = [
@@ -67,8 +70,6 @@ constraint-dependencies = [ # can be removed once pynxtools removes kikuchipy re
 ]
 required-version = ">=0.8.0"
 prerelease = "explicit"
-# https://github.com/gmr/flatdict/issues/60
-extra-build-dependencies = { flatdict = ["setuptools<82.0.0"] }
 
 [tool.uv.sources]
 torch = [{ index = "pytorch-cpu" }]

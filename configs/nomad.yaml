@@ -7,12 +7,21 @@ oasis:
   is_oasis: true
   uses_central_user_management: true
 
+<<<<<<< HEAD
 north:
   jupyterhub_crypt_key: "3e1c6b17687a29a21bfe9d53e2c5e9ac423744fb69535b5a4874184a76010dde"
   tools:
     options:
       jupyter:
         image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
+=======
+plugins:
+  entry_points:
+    options:
+      nomad_north_jupyter.north_tools:jupyter:
+        north_tool:
+          image: ghcr.io/fairmat-nfdi/nomad-north-jupyter:latest
+>>>>>>> template/main
 
 meta:
   deployment: "oasis"

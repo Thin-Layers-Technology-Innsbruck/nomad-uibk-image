@@ -78,6 +78,7 @@ services:
       start_period: 10s
 
   postgresql:
+    restart: unless-stopped
     container_name: nomad_oasis_postgresql
     environment:
       POSTGRES_PASSWORD: temporal
@@ -91,6 +92,7 @@ services:
       - postgresql:/var/lib/postgresql/data
 
   temporal:
+    restart: unless-stopped
     container_name: nomad_oasis_temporal
     depends_on:
       - postgresql

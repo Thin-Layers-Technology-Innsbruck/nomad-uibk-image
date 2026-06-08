@@ -53,7 +53,7 @@ jupyter = [
 
 gpu-action = []
 cpu-action = [
-  "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
+  "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@394f926a260c1eb525a0e2f61f205c9382687011",
 ]
 
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.2"]

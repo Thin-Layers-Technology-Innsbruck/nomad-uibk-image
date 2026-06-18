@@ -31,7 +31,7 @@ plugins = [
   "nomad-measurements>=1.3.4",
   "nomad-schema-plugin-run>=1.0.1",
   "nomad-schema-plugin-simulation-workflow>=1.0.11",
-  "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@394f926a260c1eb525a0e2f61f205c9382687011",
+  "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@beecd21233fe2f75680373bcec16e16ef982ef14",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
@@ -53,7 +53,7 @@ jupyter = [
 
 gpu-action = []
 cpu-action = [
-  "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@394f926a260c1eb525a0e2f61f205c9382687011",
+  "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@beecd21233fe2f75680373bcec16e16ef982ef14",
 ]
 
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.2"]

@@ -52,7 +52,7 @@ Any pushes to the main branch of this repository, such as when [adding a plugin]
     ```
     and bring the Oasis back up with
     ```sh
-    docker compose up -d
+    docker compose up
     ```
 
 2. You can remove unused images to free up space by running

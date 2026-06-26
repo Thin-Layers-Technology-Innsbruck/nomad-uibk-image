@@ -17,9 +17,8 @@ dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.2",
+  "nomad-lab[parsing, infrastructure]>=1.4.1",
   "plotly<6.0",
 ]
 
@@ -30,13 +29,12 @@ repository = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-uibk-ima
 plugins = [
   "nomad-measurements>=1.3.4",
   "nomad-schema-plugin-run>=1.0.1",
-  "nomad-schema-plugin-simulation-workflow>=1.0.11",
+  "nomad-schema-plugin-simulation-workflow>=1.0.1",
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",
-  "nomad-north-jupyter>=0.2.5",
 ]
 jupyter = [
   "voila",
@@ -50,21 +48,27 @@ jupyter = [
   "ipympl",
   "ipyvuetify",
 ]
-
 gpu-action = []
 cpu-action = [
   "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
 ]
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.2"]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.1"]
 
 [tool.uv]
 extra-index-url = [
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple",
+  "https://gitlab.mpcdf.mpg.de/api/v4/projects/8647/packages/pypi/simple",
 ]
-
+constraint-dependencies = [ # can be removed once pynxtools removes kikuchipy restriction
+  "hyperspy>=1.7.6",
+  "pyzmq<=27.0.0",
+  "h5grove[fastapi]<3", # temporary restriction due to breaking changes in h5grove v3.0.0
+]
 required-version = ">=0.8.0"
 prerelease = "explicit"
+# https://github.com/gmr/flatdict/issues/60
+extra-build-dependencies = { flatdict = ["setuptools<82.0.0"] }
 
 [tool.uv.sources]
 torch = [{ index = "pytorch-cpu" }]

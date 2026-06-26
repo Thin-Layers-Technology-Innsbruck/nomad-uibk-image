@@ -9,10 +9,13 @@ oasis:
 
 north:
   jupyterhub_crypt_key: "3e1c6b17687a29a21bfe9d53e2c5e9ac423744fb69535b5a4874184a76010dde"
-  tools:
+
+plugins:
+  entry_points:
     options:
-      jupyter:
-        image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
+      nomad_north_jupyter.north_tools:jupyter:
+        north_tool:
+          image:  ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
 
 meta:
   deployment: "oasis"

@@ -1359,7 +1359,7 @@ wheels = [
 
 [[package]]
 name = "fairmat-readers-transmission"
-version = "0.0.2"
+version = "0.0.3"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "numpy" },
@@ -1367,14 +1367,14 @@ dependencies = [
     { name = "pint", version = "0.24.4", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pint", version = "0.25.2", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/17/71/5fd70ceb6fa7991e683a19ee60dedbb73348365d97e69c68e8c0481eacbc/fairmat_readers_transmission-0.0.2.tar.gz", hash = "sha256:9038c2402e91984ecd79c53b5adca1bf981b7b62be3405d6830dc84166fc2ea2", size = 46920, upload-time = "2024-10-10T14:39:27.776Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/df/7d/86c33bbbd9fce8c57951e2aa903b07a8dfcddb0c8e4919e3e4572657a940/fairmat_readers_transmission-0.0.3.tar.gz", hash = "sha256:bf08ae57d7fe5ad2b00b9ff9653798a3e98c63f4662567dfdb3400235343ff85", size = 47259, upload-time = "2026-06-25T11:34:11.366Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5b/95/0e87572ea39a8e04aafa41b856f8ab089b7a7d5bd3e8fec2bef32bf1b058/fairmat_readers_transmission-0.0.2-py3-none-any.whl", hash = "sha256:bce6eba9a0160afa1f21dc46d12cc1b5754ea0c9db66732bea84992d3ecde9e4", size = 16647, upload-time = "2024-10-10T14:39:26.142Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/64/8fbc374f8253fcb1d0f1c3d367b895fe4f67fe55e04de51fc96c3a89a23e/fairmat_readers_transmission-0.0.3-py3-none-any.whl", hash = "sha256:a75a162c5eb23ebc95411ec83b20b8a90202a5454f5f24f3e0b22a3808d4fcbb", size = 17644, upload-time = "2026-06-25T11:34:10.237Z" },
 ]
 
 [[package]]
 name = "fairmat-readers-xrd"
-version = "0.0.8"
+version = "0.0.9"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "numpy" },
@@ -1382,9 +1382,9 @@ dependencies = [
     { name = "pint", version = "0.25.2", source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "xmltodict" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f6/9f/6c8ecbac08b98821fd5e7c71fed480d19ac2769107f4d23211d4c22b9637/fairmat_readers_xrd-0.0.8.tar.gz", hash = "sha256:cd4f996e6eca6677b91f2864cc1c5a2704025721d72bd92475e990898a07f105", size = 6900676, upload-time = "2026-01-05T11:53:41.27Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/2b/658735188b78520195569c492279a3fb54b025c4b233774b0d56ada5c7b8/fairmat_readers_xrd-0.0.9.tar.gz", hash = "sha256:40bf62e0f8599aba58b6e681263be9766d5a9a44da33178a21ea785625df018b", size = 6900905, upload-time = "2026-06-25T10:34:33.807Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2f/85/690b40bf3fc342db5d55cee799405b5baad4047c48f34d4e0d0500de2419/fairmat_readers_xrd-0.0.8-py3-none-any.whl", hash = "sha256:19d8d7333cf248846515a005dd687e0cbd33b6d604c42cd7ca6cf365d39b6aa8", size = 28721, upload-time = "2026-01-05T11:53:40.089Z" },
+    { url = "https://files.pythonhosted.org/packages/30/65/8cb62692153934186c4d338fc207dad5fef89ea1c2dfc5f413bfa8e6207a/fairmat_readers_xrd-0.0.9-py3-none-any.whl", hash = "sha256:8e7e4e72b97753968489870216bdb61fb16aaa15874d1215bb7fa552f0d9dd2f", size = 29743, upload-time = "2026-06-25T10:34:32.421Z" },
 ]
 
 [[package]]
@@ -3868,7 +3868,7 @@ requires-dist = [
     { name = "jupyterlab-server", marker = "extra == 'jupyter'", specifier = ">=2.27.1,<3" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.4.2" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.4.2" },
-    { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.3.4" },
+    { name = "nomad-measurements", marker = "extra == 'plugins'", specifier = ">=1.3.6" },
     { name = "nomad-north-jupyter", marker = "extra == 'plugins'", specifier = ">=0.2.5" },
     { name = "nomad-north-voila", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-north-voila.git?rev=main" },
     { name = "nomad-pvcomb", marker = "extra == 'plugins'", git = "https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git?rev=main" },
@@ -3994,16 +3994,16 @@ wheels = [
 
 [[package]]
 name = "nomad-measurements"
-version = "1.3.5"
+version = "1.3.6"
 source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
 dependencies = [
     { name = "fairmat-readers-transmission" },
     { name = "fairmat-readers-xrd" },
     { name = "nomad-lab" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2f/ea/7648ae8e35d4e3f130d16ccdadb6df6da9fb77a929a94ae9b183dd466ed0/nomad_measurements-1.3.5.tar.gz", hash = "sha256:8ac1c81d3ce6ed26ca72a8975fca365e65ea57b66c418c6b3c36432fef981305", size = 9481819, upload-time = "2026-01-07T14:41:12.949Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/0b/249a3cb4ddb5655bab02916465d709e7fe567c778f1af57c65c4d6a20116/nomad_measurements-1.3.6.tar.gz", hash = "sha256:ba8b3a1aa532614175414defad27738e9d7e1b903707d0dc6d024160ea46e6c3", size = 9482305, upload-time = "2026-06-25T14:20:59.808Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1d/fd/ed285d298673499e816777261150fb31f213f87065f2bec1897dc86a0952/nomad_measurements-1.3.5-py3-none-any.whl", hash = "sha256:bd03692d6c62d78ae256b3bc135afc82ca67af5d4d3b67dade2c2f40b0555f66", size = 69261, upload-time = "2026-01-07T14:41:10.702Z" },
+    { url = "https://files.pythonhosted.org/packages/df/ca/67a446e1d731e117993bccf462b7e35c6df0d941683cc9349adbf2795013/nomad_measurements-1.3.6-py3-none-any.whl", hash = "sha256:839abfd00ac390bc70450b16c84b8088ec3be91356cb31c9f1f48731d5cba6a8", size = 70751, upload-time = "2026-06-25T14:20:58.286Z" },
 ]
 
 [[package]]

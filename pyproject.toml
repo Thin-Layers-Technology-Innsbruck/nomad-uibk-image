@@ -28,7 +28,7 @@ repository = "https://github.com/Thin-Layers-Technology-Innsbruck/nomad-uibk-ima
 
 [project.optional-dependencies]
 plugins = [
-  "nomad-measurements>=1.3.4",
+  "nomad-measurements>=1.3.6",
   "nomad-schema-plugin-run>=1.0.1",
   "nomad-schema-plugin-simulation-workflow>=1.0.11",
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",

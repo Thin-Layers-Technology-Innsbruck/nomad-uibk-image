@@ -321,7 +321,7 @@ services:
       DOCKER_PREFIX: "nomad-oasis-north"
       DOCKER_NETWORK: "nomad_oasis_network"
     env_file:
-      - ./.env
+      - ./.env.north
     volumes:
       # Bind Docker socket on the host so we can connect to the daemon from
       # within the container

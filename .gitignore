@@ -3,6 +3,9 @@
 ssl/
 configs/nomad.secrets.yaml
 
+## Template
+.env.north
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

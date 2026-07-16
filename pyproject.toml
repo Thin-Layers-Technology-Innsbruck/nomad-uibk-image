@@ -17,10 +17,8 @@ dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.2",
-  "plotly<6.0",
+  "nomad-lab[parsing, infrastructure]>=1.4.3",
 ]
 
 [project.urls]
@@ -36,7 +34,7 @@ plugins = [
   "pynxtools-apm>=0.4.2",
   "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",
-  "nomad-north-jupyter>=0.2.5",
+  "nomad-north-jupyter>=0.2.6",
 ]
 jupyter = [
   "voila",
@@ -56,15 +54,13 @@ cpu-action = [
   "nomad-uibk-plugin[cpu-action] @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
 ]
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.2"]
+dev = ["nomad-lab[parsing, infrastructure, dev]>=1.4.3"]
 
 [tool.uv]
 extra-index-url = [
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple",
 ]
-
-required-version = ">=0.8.0"
-prerelease = "explicit"
+prerelease = "if-necessary-or-explicit"
 
 [tool.uv.sources]
 torch = [{ index = "pytorch-cpu" }]

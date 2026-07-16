@@ -255,16 +255,16 @@ services:
       - ./.volumes/fs:/app/.volumes/fs
     command: python -m nomad.cli admin run action-cpu-worker
     healthcheck:
-    test:
-      - "CMD"
-      - "curl"
-      - "--fail"
-      - "--silent"
-      - "http://localhost:8080/health"
-    interval: 10s
-    timeout: 5s
-    retries: 5
-    start_period: 15s
+      test:
+        - "CMD"
+        - "curl"
+        - "--fail"
+        - "--silent"
+        - "http://localhost:8080/health"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
 
   # nomad app (api + proxy)
   app:

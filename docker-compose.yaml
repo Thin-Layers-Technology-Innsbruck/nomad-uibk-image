@@ -313,7 +313,7 @@ services:
   # nomad remote tools hub (JupyterHUB)
   north:
     restart: unless-stopped
-    image: ghcr.io/fairmat-nfdi/nomad-distro-template:main
+    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image:main
     platform: linux/amd64
     container_name: nomad_oasis_north
     environment:

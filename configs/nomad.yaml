@@ -15,7 +15,7 @@ plugins:
     options:
       nomad_north_jupyter.north_tools:jupyter:
         north_tool:
-          image:  ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
+          image:  ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:upgrade_to_1.4.3
 
 meta:
   deployment: "oasis"

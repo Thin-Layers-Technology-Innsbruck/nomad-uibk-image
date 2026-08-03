@@ -118,7 +118,7 @@ Note that the `base-notebook` image is more lightweight and uses less disk space
 The image is quite large and might cause a timeout the first time it is run. In order to avoid this you can pre pull the image with:
 
 ```sh
-docker pull ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:upgrade_to_1.4.3
+docker pull ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
 ```
 
 If you want additional python packages to be available to all users in the jupyter hub you can add those to the jupyter table in the [`pyproject.toml`](pyproject.toml):

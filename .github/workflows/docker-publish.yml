@@ -21,7 +21,7 @@ env:
   NOMAD_DOCS_REPO_REF: ""
   # If you want to skip the tests for some plugins, add them here as a single string where
   # each plugin is separated by whitespace
-  PLUGIN_TESTS_PLUGINS_TO_SKIP: "simulationworkflowschema"
+  PLUGIN_TESTS_PLUGINS_TO_SKIP: "nomad-material-processing"
 
 permissions:
   contents: write
@@ -199,6 +199,7 @@ jobs:
       - name: Start containers and check app/jupyter container health
         working-directory: tests
         run: |
+          docker compose up -d --quiet-pull --wait
           if ! docker compose up -d --quiet-pull --wait; then
             echo "Containers failed health check."
             echo "Logs for app:"

@@ -1,5 +1,5 @@
 services:
-  api_host: "localhost"
+  api_host: "mti-thinlayertechnology.uibk.ac.at"
   api_base_path: "/nomad-oasis"
   upload_limit: 1000
 
@@ -18,8 +18,8 @@ plugins:
           image:  ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
 
 meta:
-  deployment: "oasis"
-  deployment_url: "http://mti-thinfilmoasis.uibk.ac.at/api"
+  deployment: "UIBK-TLT-oasis"
+  deployment_url: "mti-thinlayertechnology.uibk.ac.at/api"
   maintainer_email: "nikolai.kraus@uibk.ac.at"
 
 logstash:

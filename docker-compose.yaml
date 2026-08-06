@@ -153,6 +153,8 @@ services:
       NOMAD_TEMPORAL_HOST: temporal
     env_file:
       - ./.env
+    secrets:
+      - nomad_config
     depends_on:
       temporal:
         condition: service_healthy
@@ -163,7 +165,7 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run action-internal-worker
+    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-internal-worker
     healthcheck:
       test:
         - "CMD"
@@ -192,6 +194,8 @@ services:
   #   container_name: nomad_oasis_gpu_worker
   #   env_file:
   #     - ./.env
+  #   secrets:
+  #     - nomad_config
   #   deploy:
   #     replicas: 1
   #     resources:
@@ -216,7 +220,7 @@ services:
   #   volumes:
   #     # - ./configs/nomad.yaml:/app/nomad.yaml
   #     - ./.volumes/fs:/app/.volumes/fs
-  #   command: python -m nomad.cli admin run action-gpu-worker
+  #   command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-gpu-worker
   #   healthcheck:
   #     test:
   #       - "CMD"
@@ -237,6 +241,8 @@ services:
     container_name: nomad_oasis_cpu_worker
     env_file:
       - ./.env
+    secrets:
+      - nomad_config
     environment:
       NOMAD_SERVICE: nomad_oasis_cpu_worker
       NOMAD_ELASTIC_HOST: elastic
@@ -261,7 +267,7 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run action-cpu-worker
+    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-cpu-worker
     healthcheck:
       test:
         - "CMD"
@@ -291,6 +297,8 @@ services:
       NOMAD_TEMPORAL_HOST: temporal
     env_file:
       - ./.env
+    secrets:
+      - nomad_config
     depends_on:
       temporal:
         condition: service_healthy
@@ -301,7 +309,7 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run app --with-gui --gunicorn --host 0.0.0.0 --workers 2
+    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config app --with-gui --gunicorn --host 0.0.0.0 --workers 2
     healthcheck:
       test:
         - "CMD"
@@ -360,6 +368,8 @@ services:
       NOMAD_MONGO_HOST: mongo
     env_file:
       - ./.env
+    secrets:
+      - nomad_config
     deploy:
       resources:
         limits:
@@ -372,7 +382,7 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run logtransfer
+    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config logtransfer
     profiles: ["with_logtransfer"]
 
   # nomad proxy (a reverse proxy for nomad)
@@ -433,3 +443,7 @@ volumes:
 networks:
   default:
     name: nomad_oasis_network
+
+secrets:
+  nomad_config:
+    file: ./configs/nomad.secrets.yaml

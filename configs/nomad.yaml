@@ -7,9 +7,6 @@ oasis:
   is_oasis: true
   uses_central_user_management: true
 
-north:
-  jupyterhub_crypt_key: "3e1c6b17687a29a21bfe9d53e2c5e9ac423744fb69535b5a4874184a76010dde"
-
 plugins:
   entry_points:
     options:
@@ -38,3 +35,7 @@ elastic:
 north:
   enabled: true
   enable_new_hub_api: true
+
+auth:
+  require_authentication: true
+  reject_unauthorized_users: true

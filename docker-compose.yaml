@@ -153,8 +153,8 @@ services:
       NOMAD_TEMPORAL_HOST: temporal
     env_file:
       - ./.env
-    secrets:
-      - nomad_config
+    #secrets:
+    #  - nomad_config
     depends_on:
       temporal:
         condition: service_healthy
@@ -165,7 +165,8 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-internal-worker
+      #- ./scripts/run-nomad.py:/scripts/run-nomad.py:ro
+    command: python -m nomad.cli admin run action-internal-worker
     healthcheck:
       test:
         - "CMD"
@@ -220,7 +221,8 @@ services:
   #   volumes:
   #     # - ./configs/nomad.yaml:/app/nomad.yaml
   #     - ./.volumes/fs:/app/.volumes/fs
-  #   command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-gpu-worker
+  #     - ./scripts/run-nomad.py:/scripts/run-nomad.py:ro
+  #   command: python /scripts/run-nomad.py action-gpu-worker
   #   healthcheck:
   #     test:
   #       - "CMD"
@@ -241,8 +243,8 @@ services:
     container_name: nomad_oasis_cpu_worker
     env_file:
       - ./.env
-    secrets:
-      - nomad_config
+    #secrets:
+    #  - nomad_config
     environment:
       NOMAD_SERVICE: nomad_oasis_cpu_worker
       NOMAD_ELASTIC_HOST: elastic
@@ -267,7 +269,9 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config action-cpu-worker
+      #- ./scripts/run-nomad.py:/scripts/run-nomad.py:ro
+    #command: python /scripts/run-nomad.py action-cpu-worker
+    command: python -m nomad.cli admin run action-cpu-worker
     healthcheck:
       test:
         - "CMD"
@@ -295,10 +299,11 @@ services:
       NOMAD_LOGSTASH_HOST: logtransfer
       NOMAD_NORTH_HUB_HOST: north
       NOMAD_TEMPORAL_HOST: temporal
+      XDG_RUNTIME_DIR: /tmp
     env_file:
       - ./.env
-    secrets:
-      - nomad_config
+    #secrets:
+    #  - nomad_config
     depends_on:
       temporal:
         condition: service_healthy
@@ -309,7 +314,9 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config app --with-gui --gunicorn --host 0.0.0.0 --workers 2
+      #- ./scripts/run-nomad.py:/scripts/run-nomad.py:ro
+    #command: python /scripts/run-nomad.py app --with-gui --gunicorn --host 0.0.0.0 --workers 2
+    command: python -m nomad.cli admin run app --with-gui --gunicorn --host 0.0.0.0 --workers 2
     healthcheck:
       test:
         - "CMD"
@@ -325,7 +332,7 @@ services:
   # nomad remote tools hub (JupyterHUB)
   north:
     restart: unless-stopped
-    image: ghcr.io/fairmat-nfdi/nomad-north:main
+    image: ghcr.io/thin-layers-technology-innsbruck/nomad-north:main
     platform: linux/amd64
     container_name: nomad_oasis_north
     environment:
@@ -368,8 +375,8 @@ services:
       NOMAD_MONGO_HOST: mongo
     env_file:
       - ./.env
-    secrets:
-      - nomad_config
+    #secrets:
+    #  - nomad_config
     deploy:
       resources:
         limits:
@@ -382,13 +389,15 @@ services:
     volumes:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run -f /app/nomad.yaml -f /run/secrets/nomad_config logtransfer
+      #- ./scripts/run-nomad.py:/scripts/run-nomad.py:ro
+    #command: python /scripts/run-nomad.py logtransfer
+    command: python -m nomad.cli admin run logtransfer
     profiles: ["with_logtransfer"]
 
   # nomad proxy (a reverse proxy for nomad)
   proxy:
     restart: unless-stopped
-    image: docker.io/nginx:1.31.1-alpine
+    image: docker.io/nginx:1.31.3-alpine
     container_name: nomad_oasis_proxy
     command: nginx -g 'daemon off;'
     deploy:
@@ -444,6 +453,6 @@ networks:
   default:
     name: nomad_oasis_network
 
-secrets:
-  nomad_config:
-    file: ./configs/nomad.secrets.yaml
+#secrets:
+#  nomad_config:
+#    file: ./configs/nomad.secrets.yaml

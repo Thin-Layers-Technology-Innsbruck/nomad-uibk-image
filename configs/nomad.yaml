@@ -1,7 +1,6 @@
 services:
-  api_host: "mti-thinlayertechnology.uibk.ac.at"
+  api_host: "local"
   api_base_path: "/nomad-oasis"
-  upload_limit: 1000
 
 oasis:
   is_oasis: true
@@ -16,7 +15,7 @@ plugins:
 
 meta:
   deployment: "UIBK-TLT-oasis"
-  deployment_url: "mti-thinlayertechnology.uibk.ac.at/api"
+  deployment_url: "https://mti-thinlayertechnology.uibk.ac.at/api"
   maintainer_email: "nikolai.kraus@uibk.ac.at"
 
 logstash:
@@ -35,7 +34,3 @@ elastic:
 north:
   enabled: true
   enable_new_hub_api: true
-
-auth:
-  require_authentication: true
-  reject_unauthorized_users: true

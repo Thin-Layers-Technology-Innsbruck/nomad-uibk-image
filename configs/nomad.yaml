@@ -1,6 +1,7 @@
 services:
-  api_host: "https://mti-thinlayertechnology.uibk.ac.at/"
+  api_host: "mti-thinlayertechnology.uibk.ac.at"
   api_base_path: "/nomad-oasis"
+  https: true
 
 oasis:
   is_oasis: true

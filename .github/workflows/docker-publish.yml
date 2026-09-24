@@ -50,7 +50,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Update lock file
-        run: uv lock --upgrade
+        run: |
+          uv lock
+          # Refresh only nomad-uibk-plugin; the git ref comes from pyproject.toml.
+          uv lock --upgrade-package nomad-uibk-plugin
 
       # Commits any changes made to the lockfile
       - name: Commit lock file changes

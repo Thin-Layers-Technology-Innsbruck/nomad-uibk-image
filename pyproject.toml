@@ -32,7 +32,7 @@ plugins = [
   "nomad-uibk-plugin @ git+https://github.com/Thin-Layers-Technology-Innsbruck/nomad-UIBK-plugin.git@main",
   "pynxtools==0.12.0",
   "pynxtools-apm>=0.4.2",
-  "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main",
+  # "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main", # already included by the plugin. Removed here to avoid dependency conflicts
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",
   "nomad-north-jupyter>=0.2.6",
 ]

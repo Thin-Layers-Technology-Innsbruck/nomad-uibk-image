@@ -231,7 +231,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     # Use inexact to avoid removing pre-installed packages in the environment
     # Use no-install-project to skip installing the current project (`nomad-distribution`)
-    uv sync --extra plugins --extra jupyter --no-install-project --inexact
+    uv sync --extra plugins --extra jupyter --no-install-project --inexact --reinstall-package pyzmq
 
 
 FROM quay.io/jupyter/base-notebook:${JUPYTER_VERSION} AS jupyter

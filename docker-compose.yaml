@@ -153,6 +153,7 @@ services:
       NOMAD_TEMPORAL_HOST: temporal
     env_file:
       - ./.env
+      - ./.nomad-secrets.env
     #secrets:
     #  - nomad_config
     depends_on:
@@ -302,6 +303,7 @@ services:
       #XDG_RUNTIME_DIR: /tmp
     env_file:
       - ./.env
+      - ./.nomad-secrets.env
     #secrets:
     #  - nomad_config
     depends_on:
@@ -425,7 +427,7 @@ services:
 
   # jupyterlab image: (this is only used to pull the image, no service is run for this)
   jupyterlab_image:
-    image: ghcr.io/thin-layers-technology-innsbruck#/nomad-uibk-image/jupyter:main
+    image: ghcr.io/thin-layers-technology-innsbruck/nomad-uibk-image/jupyter:main
     platform: linux/amd64
     container_name: nomad_jupyter_image
     pull_policy: always
@@ -449,7 +451,3 @@ volumes:
 networks:
   default:
     name: nomad_oasis_network
-
-#secrets:
-#  nomad_config:
-#    file: ./configs/nomad.secrets.yaml

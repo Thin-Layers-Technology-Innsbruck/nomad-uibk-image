@@ -1,7 +1,7 @@
 ## Custom
 # SSL
 ssl/
-configs/nomad.secrets.yaml
+configs/nomad-secrets.env
 
 ## Template
 .env.north

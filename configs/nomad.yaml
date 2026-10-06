@@ -35,3 +35,7 @@ elastic:
 north:
   enabled: true
   enable_new_hub_api: true
+
+auth:
+  require_authentication: true
+  reject_unauthorized_users: true

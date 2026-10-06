@@ -2,6 +2,7 @@ services:
   api_host: "mti-thinlayertechnology.uibk.ac.at"
   api_base_path: "/nomad-oasis"
   https: true
+  upload_limit: 1000
 
 oasis:
   is_oasis: true

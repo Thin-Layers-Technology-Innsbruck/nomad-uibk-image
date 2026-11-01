@@ -50,7 +50,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Update lock file
-        run: uv lock
+        run: |
+          uv lock \
+            --upgrade-package nomad-uibk-plugin \
+            --upgrade-package nomad-pvcomb
 
       # Commits any changes made to the lockfile
       - name: Commit lock file changes

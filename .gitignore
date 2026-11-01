@@ -2,6 +2,7 @@
 # SSL
 ssl/
 .nomad-secrets.env
+scripts/audit
 
 ## Template
 .env.north

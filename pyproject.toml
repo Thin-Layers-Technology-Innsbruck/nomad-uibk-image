@@ -35,6 +35,7 @@ plugins = [
   # "nomad-pvcomb @ git+https://codebase.helmholtz.cloud/pvcomb/nomad-pvcomb.git@main", # already included by the plugin. Removed here to avoid dependency conflicts
   "nomad-north-voila @ git+https://github.com/FAIRmat-NFDI/nomad-north-voila.git@main",
   "nomad-north-jupyter>=0.2.6",
+  "nomad-gui==2.0.0b3",
 ]
 jupyter = [
   "voila",

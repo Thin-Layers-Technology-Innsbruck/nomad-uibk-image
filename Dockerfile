@@ -258,13 +258,16 @@ RUN apt-get update \
       # clean cache and logs
       && rm -rf /var/lib/apt/lists/* /var/log/* /var/tmp/* ~/.npm
 
+# Replace the base environment so files removed in the builder do not survive.
+RUN rm -rf /opt/conda
+COPY --from=jupyter_builder /opt/conda /opt/conda
+
 # Switch back to jovyan to avoid accidental container runs as root
 USER ${NB_UID}
 WORKDIR "${HOME}"
 
 COPY --from=uv_image /uv /bin/uv
-COPY --from=jupyter_builder /opt/conda /opt/conda
-
+RUN python -c "import zmq" && jupyterhub-singleuser --version
 
 # Get rid ot the following message when you open a terminal in jupyterlab:
 # groups: cannot find name for group ID 11320
